@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Desafio Módulo 1</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Busca de Dev's</h1>
+
+      <div class="input-block-search">
+        <label for="inputSearch">Faça sua busca:</label>
+        <input type="text" id="inputSearch" placeholder="Digite aqui" />
+      </div>
+
+      <div class="input-block-checks">
+        <div>
+          <label class="labelContainer">
+            <input type="checkbox" id="chkJava" value="Java" name="langs" checked />
+            Java
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="labelContainer">
+            <input type="checkbox" id="chkJavaScript" value="JavaScript" name="langs" />
+            JavaScript
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="labelContainer">
+            <input type="checkbox" id="chkPython" value="Python" name="langs" />
+            Python
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div>
+          <label class="labelContainer">
+            <input type="radio" id="rdAnd" value="and" name="operatorType" checked />
+            E
+            <span class="checkmark"></span>
+          </label>
+          <label class="labelContainer">
+            <input type="radio" id="rdOr" value="or" name="operatorType" />
+            OU
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="resultBox">
+        <h1>
+          <span class="numbersOfDevFinded"></span>
+          Dev's encontrados:
+        </h1>
+        <div class="devsFiltered">
+          <p class="msgBlankDevs">Faça sua busca</p>
+        </div>
+      </div>
+    </div>
+    <script defer src="js/script.js"></script>
+  </body>
+</html>

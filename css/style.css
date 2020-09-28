@@ -1,0 +1,198 @@
+:root {
+  --color-border: rgb(0 0 0 / 20%);
+}
+* {
+  padding: 0;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 90vw;
+  max-width: 700px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .input-block-search {
+  margin: 20px 0px;
+}
+
+.container .input-block-search label {
+  font-size: 1.2rem;
+}
+
+.container .input-block-search input[type="text"] {
+  width: 100%;
+  line-height: 20px;
+  font-size: 1.2rem;
+  padding: 7px 14px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border-radius: 50px;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 0px 0px var(--color-border);
+  outline: none;
+}
+
+.container .input-block-checks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.container .resultBox h1{
+  margin: 20px 0px;
+}
+
+.container .resultBox span {
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  
+}
+
+.container .resultBox .devsFiltered{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.container .resultBox .devsFiltered .msgBlankDevs {
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.container .resultBox .devsFiltered div .avatar {
+  grid-area: avatar;
+  width: 80px;
+  border-radius: 80px;
+  margin-right: 10px;
+  box-shadow: 2px 2px 0px 0px var(--color-border);
+}
+
+.container .resultBox .devsFiltered div p {
+  grid-area: name;
+  align-self: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.container .resultBox .devsFiltered div .imgLanguagesList {
+  grid-area: languages;
+}
+
+.container .resultBox .devsFiltered div .imgLanguagesList .imgLanguage {
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  box-shadow: 2px 2px 0px 0px var(--color-border);
+  border-radius: 3px;
+  border: 1px solid var(--color-border);
+  padding: 3px;
+  margin-right: 5px;
+}
+
+.container .resultBox .devsFiltered > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "avatar name"
+    "avatar languages";
+  border-radius: 60px;
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  box-shadow: 1px 1px 0px 0px var(--color-border);
+}
+
+@media (min-width: 700px){
+  .container .resultBox .devsFiltered{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+      "avatar name"
+      "avatar languages";
+  }
+}
+
+/* The container */
+.labelContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.labelContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 13px;
+}
+
+/* On mouse-over, add a grey background color */
+.labelContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.labelContainer input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.labelContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.labelContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
