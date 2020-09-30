@@ -20,10 +20,11 @@ let allDevsFiltered = [];
 
 //get all devs from api e put then on array
 async function getAllDevsFromAPI() {
-  const res = await fetch("http://localhost:3001/devs");
+  const res = await fetch("./backend/devs.json");
   const json = await res.json();
-
-  allDevs = json.map(item => {
+  // const res = await fetch("http://localhost:3001/devs");
+  // allDevs = json.map(item => {
+  allDevs = json.devs.map(item => {
 
     const lowerCaseName = item.name.toLowerCase();
 
