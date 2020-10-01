@@ -134,13 +134,8 @@ function searchDevs() {
 
   } else {
     // AND
-    
-    allDevsFiltered = allDevsFiltered.filter((dev) => {
-      for (let i = 0; i < dev.programmingLanguages.length; i++) {
-        if (operatorValueTrim === dev.programmingLanguagesForSearch) {
-          return dev;
-        }
-      }
+    allDevsFiltered = allDevsFiltered.filter(({programmingLanguagesForSearch}) => {
+      return operatorValueTrim === programmingLanguagesForSearch;
     });
   }
   
